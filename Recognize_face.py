@@ -24,10 +24,9 @@ while True:
 
     
         cv2.rectangle(img, (x, y), (x + w, y + h), (255, 225, 225), 2)
-
         
         Id, conf = recognizer.predict(gray[y:y + h, x:x + w])
-        
+        #Here you can make any number of ids please change according to your name and id(that you have typed in your first file) 
         if Id == 1:
             Id = "Gaurav"
         elif Id == 2:
