@@ -14,6 +14,7 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("Trainer.yml")
 cap = cv2.VideoCapture(0)
 Id = 0
+Name = ""
 font = cv2.FONT_HERSHEY_COMPLEX
 
 while True:
@@ -28,16 +29,16 @@ while True:
         Id, conf = recognizer.predict(gray[y:y + h, x:x + w])
         #Here you can make any number of ids please change according to your name and id(that you have typed in your first file) 
         if Id == 1:
-            Id = "Gaurav"
+            Name = "Gaurav"
         elif Id == 2:
-            Id = "Apeksha"
+            Name = "Apeksha"
         elif Id== 3:
-            Id = "Parth"
+            Name = "Parth"
         
        
             
     cv2.rectangle(img, (x - 22, y - 45), (x + w + 15, y - 22), (0, 0, 0), -1)
-    cv2.putText(img,"Name:" + str(Id), (x, y - 22), font, 1, (0, 0, 255), 2)
+    cv2.putText(img,"Name:" + str(Name), (x, y - 22), font, 1, (0, 0, 255), 2)
     
     cv2.imshow('img', img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
